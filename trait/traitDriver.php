@@ -6,13 +6,13 @@
  */
 trait traitDriver
 {
-    protected $driv = 100;
+    protected $driver = 100;
 
     /**
      * @return int
      */
     public function driver()
     {
-        return $this->driv;
+        return $this->driver;
     }
 }

@@ -1,12 +1,19 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: MS
- * Date: 27.02.2019
- * Time: 8:34
+ * Trait traitGps
+ * Стоймость gps
  */
 trait traitGps
 {
+    protected $costGps = 15;
+    use traitTime;
 
+    public function traitGpsTime($time)
+    {
+        $costGps = $this->costGps;
+        $time = $this->HourlyTime($time);
+        $sum = $time * $costGps;
+        return $sum;
+    }
 }

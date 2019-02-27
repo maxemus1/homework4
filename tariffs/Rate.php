@@ -12,10 +12,5 @@ abstract class Rate
 
     abstract public function tariffPriceMin();
 
-
-    function __construct()
-    {
-
-    }
 }
 

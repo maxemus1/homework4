@@ -6,5 +6,5 @@
  */
 interface InterfaceTariff
 {
-    public function sum($distance,$time,$age);
+    public function sum($distance, $time, $age);
 }
