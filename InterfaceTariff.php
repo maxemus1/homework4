@@ -2,8 +2,9 @@
 
 /**
  * Interface interfaceTariff
+ * Интерфейс подсчета суммы
  */
 interface InterfaceTariff
 {
-    public function sum($a,$b);
+    public function sum($distance,$time,$age);
 }
