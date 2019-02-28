@@ -6,23 +6,23 @@
  */
 class BaseRate extends Rate implements InterfaceTariff
 {
-    public function tariffPriceKil()
+    protected function tariffPriceKilometer()
     {
-        return $this->priceKil = 10;
+        return  10;
     }
 
-    public function tariffPriceMin()
+    protected function tariffPriceMinute()
     {
-        return $this->priceMin = 3;
+        return  3;
     }
 
     public function sum($distance, $time, $age)
     {
         if ($age >= 18 && $age <= 65) {
-            $sum = $this->tariffPriceKil()*$distance + $this->tariffPriceMin()*$time;
+            $sum = $this->tariffPriceKilometer()*$distance + $this->tariffPriceMinute()*$time;
            ($age <= 21) ?$sum+=$sum * 1.1:$sum;
             return $sum;
         }
-        return 'Не подходящий возраст';
+        throw new \InvalidArgumentException();
     }
 }

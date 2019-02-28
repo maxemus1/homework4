@@ -9,24 +9,24 @@ class DailyRate extends Rate implements InterfaceTariff
 {
     use traitTime;
 
-    public function tariffPriceKil()
+    protected function tariffPriceKilometer()
     {
-        return $this->priceKil = 1;
+        return 1;
     }
 
-    public function tariffPriceMin()
+    protected function tariffPriceMinute()
     {
-        return $this->priceMin = 1000;//округление до 24 часов в большую сторону, но не менее 30 минут
+        return 1000;//округление до 24 часов в большую сторону, но не менее 30 минут
     }
 
     public function sum($distance, $time, $age)
     {
         if ($age >= 18 && $age <= 25) {
             $time = $this->DailyTime($time);
-            $sum = $this->tariffPriceKil() * $distance + $this->tariffPriceMin() * $time;
+            $sum = $this->tariffPriceKilometer() * $distance + $this->tariffPriceMinute() * $time;
             ($age <= 21) ? $sum += $sum * 1.1 : $sum;
             return $sum;
         }
-        return 'Не подходящий возраст';
+        throw new \InvalidArgumentException();
     }
 }

@@ -5,12 +5,10 @@
  */
 abstract class Rate
 {
-    protected $priceKil;
-    protected $priceMin;
 
-    abstract public function tariffPriceKil();
+    abstract protected function tariffPriceKilometer();
 
-    abstract public function tariffPriceMin();
+    abstract protected function tariffPriceMinute();
 
 }
 

@@ -8,24 +8,24 @@ class HourlyRate extends Rate implements InterfaceTariff
 {
     use traitTime;
 
-    public function tariffPriceKil()
+    protected function tariffPriceKilometer()
     {
-        return $this->priceKil = 0;
+        return  0;
     }
 
-    public function tariffPriceMin()
+    protected function tariffPriceMinute()
     {
-        return $this->priceMin = 200;//за 60 минут округляем в большую сторону
+        return  200;//за 60 минут округляем в большую сторону
     }
 
     public function sum($distance, $time, $age)
     {
         if ($age >= 18 && $age <= 65) {
             $time = $this->HourlyTime($time);
-            $sum = $this->tariffPriceKil() * $distance + $this->tariffPriceMin() * $time;
+            $sum = $this->tariffPriceKilometer() * $distance + $this->tariffPriceMinute() * $time;
             ($age <= 21) ? $sum += $sum * 1.1 : $sum;
             return $sum;
         }
-        return 'Не подходящий возраст';
+        throw new \InvalidArgumentException();
     }
 }

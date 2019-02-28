@@ -7,23 +7,24 @@ require 'Rate.php';
  */
 class StudentRate extends Rate implements InterfaceTariff
 {
-    public function tariffPriceKil()
+    protected function tariffPriceKilometer()
     {
-        return $this->priceKil = 4;
+        return 4;
     }
 
-    public function tariffPriceMin()
+    protected function tariffPriceMinute()
     {
-        return $this->priceMin = 1;
+        return 1;
     }
 
     public function sum($distance, $time, $age)
     {
         if ($age >= 18 && $age <= 25) {
-            $sum = $this->tariffPriceKil() * $distance + $this->tariffPriceMin() * $time;
+            $sum = $this->tariffPriceKilometer() * $distance + $this->tariffPriceMinute() * $time;
             ($age <= 21) ? $sum += $sum * 1.1 : $sum;
             return $sum;
         }
-        return 'Не подходящий возраст';
+        throw new \InvalidArgumentException();
     }
+
 }
