@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Trait traitDriver
+ * Trait driverTrait
  * Дополнителтный водитель
  */
-trait traitDriver
+trait DriverTrait
 {
     protected $driver = 100;
 

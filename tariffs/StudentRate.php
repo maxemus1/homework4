@@ -1,11 +1,11 @@
 <?php
-require 'Rate.php';
+require 'AbstractRate.php';
 
 /**
- * Class StudentRate
+ * Class StudentAbstractRate
  * Тариф Студенчиский
  */
-class StudentRate extends Rate implements InterfaceTariff
+class StudentRate extends AbstractRate implements TariffInterface
 {
     protected function tariffPriceKilometer()
     {

@@ -4,7 +4,7 @@
  * Trait traitDailyTime
  *
  */
-trait traitTime
+trait TimeTrait
 {
     public function DailyTime($time)
     {

@@ -4,7 +4,7 @@
  * Interface interfaceTariff
  * Интерфейс подсчета суммы
  */
-interface InterfaceTariff
+interface TariffInterface
 {
     public function sum($distance, $time, $age);
 }

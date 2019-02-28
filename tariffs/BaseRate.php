@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Class BaseRate
+ * Class BaseAbstractRate
  * Базовый тариф
  */
-class BaseRate extends Rate implements InterfaceTariff
+class BaseRate extends AbstractRate implements TariffInterface
 {
     protected function tariffPriceKilometer()
     {

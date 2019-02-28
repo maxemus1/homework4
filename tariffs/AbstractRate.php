@@ -1,13 +1,18 @@
 <?php
 
 /**
- * Class Rate
+ * Class AbstractRate
  */
-abstract class Rate
+abstract class AbstractRate
 {
-
+    /**
+     * @return mixed
+     */
     abstract protected function tariffPriceKilometer();
 
+    /**
+     * @return mixed
+     */
     abstract protected function tariffPriceMinute();
 
 }

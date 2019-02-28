@@ -1,13 +1,13 @@
 <?php
-require 'Rate.php';
+require 'AbstractRate.php';
 
 /**
- * Class DailyRate
+ * Class DailyAbstractRate
  * Тариф суточный
  */
-class DailyRate extends Rate implements InterfaceTariff
+class DailyRate extends AbstractRate implements TariffInterface
 {
-    use traitTime;
+    use timeTrait;
 
     protected function tariffPriceKilometer()
     {

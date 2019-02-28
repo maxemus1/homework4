@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Trait traitGps
+ * Trait gpstrait
  * Стоймость gps
  */
-trait traitGps
+trait GpsTrait
 {
     protected $costGps = 15;
-    use traitTime;
+    use timeTrait;
 
     public function traitGpsTime($time)
     {

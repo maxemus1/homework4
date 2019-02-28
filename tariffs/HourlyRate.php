@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Class HourlyRate
+ * Class HourlyAbstractRate
  * Тариф Почасовой
  */
-class HourlyRate extends Rate implements InterfaceTariff
+class HourlyRate extends AbstractRate implements TariffInterface
 {
-    use traitTime;
+    use timeTrait;
 
     protected function tariffPriceKilometer()
     {
