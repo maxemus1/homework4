@@ -1,5 +1,5 @@
 <?php
-require 'AbstractRate.php';
+
 
 /**
  * Class DailyAbstractRate

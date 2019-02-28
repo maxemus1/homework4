@@ -21,7 +21,9 @@ use TimeTrait;
 
     public function sum($distance, $time, $age)
     {
-
         $time = $this->HourlyTime($time);
+
+        return parent::sum($distance, $time, $age);
+
     }
 }

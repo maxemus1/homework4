@@ -14,14 +14,14 @@ trait TimeTrait
         if ($time >= 30) {
             return $this->DailyTime($time);
         } else {
-            $time=$time+1;
+            $time = $time + 1;
             return $time;
         }
     }
 
     public function HourlyTime($time)
     {
-        $time = ROUND($time / 60, 0) * 60;
-        return $time;
+        $time = ceil($time / 60);
+         return $time;
     }
 }

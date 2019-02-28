@@ -1,5 +1,4 @@
 <?php
-require 'AbstractRate.php';
 
 /**
  * Class StudentAbstractRate
