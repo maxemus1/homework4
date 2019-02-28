@@ -21,12 +21,8 @@ class DailyRate extends AbstractRate implements TariffInterface
 
     public function sum($distance, $time, $age)
     {
-        if ($age >= 18 && $age <= 25) {
-            $time = $this->DailyTime($time);
-            $sum = $this->tariffPriceKilometer() * $distance + $this->tariffPriceMinute() * $time;
-            ($age <= 21) ? $sum += $sum * 1.1 : $sum;
-            return $sum;
-        }
-        throw new \InvalidArgumentException();
+
+        $time = $this->DailyTime($time);
     }
+
 }

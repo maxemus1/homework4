@@ -7,4 +7,5 @@
 interface TariffInterface
 {
     public function sum($distance, $time, $age);
+
 }

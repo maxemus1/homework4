@@ -1,10 +1,13 @@
 <?php
-require 'TariffInterface.php';
-require 'tariffs/AbstractRate.php';
-require 'tariffs/BaseRate.php';
+
+require_once 'TariffInterface.php';
+require_once 'tariffs/AbstractRate.php';
+require_once 'tariffs/BasicRate.php';
+require_once 'tariffs/HourlyRate.php';
 
 
-$baseRate = new BaseAbstractRate();
+
+$baseRate = new HourlyRate();
 try {
     print_r($baseRate->sum(2, 44, 21));
 } catch
