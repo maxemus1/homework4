@@ -7,7 +7,8 @@
  */
 class HourlyRate extends AbstractRate implements TariffInterface
 {
-use TimeTrait;
+    use TimeTrait;
+    use DriverTrait;
 
     protected function tariffPriceKilometer()
     {
@@ -19,11 +20,12 @@ use TimeTrait;
         return 200;//за 60 минут округляем в большую сторону
     }
 
-    public function sum($distance, $time, $age)
+    public function sum($distance, $time, $age, $gps = false, $driver = false)
     {
+        $gps ? $gps = $this->GpsTime($time) : $gps;
+        $driver ? $driver = $this->driver() : $driver = false;
         $time = $this->HourlyTime($time);
-
-        return parent::sum($distance, $time, $age);
+        return parent::sum($distance, $time, $age, $gps, $driver);
 
     }
 }

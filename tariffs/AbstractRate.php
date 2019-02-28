@@ -5,6 +5,8 @@
  */
 abstract class AbstractRate implements TariffInterface
 {
+    use GpsTrait;
+
     /**
      * @return mixed
      */
@@ -15,10 +17,19 @@ abstract class AbstractRate implements TariffInterface
      */
     abstract protected function tariffPriceMinute();
 
-    public function sum($distance, $time, $age,$gps=0)
+    public function sum($distance, $time, $age, $gps = false, $driver = false)
     {
+
         if ($age >= 18 && $age <= 25) {
-            $sum = $this->tariffPriceKilometer() * $distance + $this->tariffPriceMinute() * $time+$gps;
+
+            $sum = $this->tariffPriceKilometer() * $distance + $this->tariffPriceMinute() * $time;
+
+            if ($gps) {
+                $sum += $gps;
+            }
+            if ($driver) {
+                $sum += $driver;
+            }
             if ($age <= 21) {
                 $sum += $sum * 0.1;
                 return $sum;

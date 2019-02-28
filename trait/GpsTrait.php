@@ -7,12 +7,12 @@
 trait GpsTrait
 {
     protected $costGps = 15;
-   // use TimeTrait;
+   use TimeTrait;
 
-    public function traitGpsTime($time)
+    public function GpsTime($time)
     {
         $costGps = $this->costGps;
-       // $time = $this->HourlyTime($time);
+        $time=$this->HourlyTime($time);
         $sum = $time * $costGps;
         return $sum;
     }

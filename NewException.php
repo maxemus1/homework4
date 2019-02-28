@@ -1,11 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: macms
- * Date: 28/02/2019
- * Time: 09:06
- */
 
 class NewException extends Exception
 {
+
+    public function exception()
+    {
+        try {
+            print_r('jr');
+        } catch
+        (InvalidArgumentException $e) {
+            echo 'Неподходящий возвраст';
+        }
+    }
 }
