@@ -11,6 +11,10 @@ require_once 'tariffs/DailyRate.php';
 require_once 'tariffs/StudentRate.php';
 require_once 'NewException.php';
 
-$baseRate = new HourlyRate();
-print_r($baseRate->sum(2, 99, 25,1,1));
+$eception = new NewException();
 
+$baseRate = new BasicRate();
+//$hourlyRate = new HourlyRate();
+//$dailyRate = new DailyRate();
+//$studentRate = new StudentRate();
+$eception->exception($baseRate->sum(2, 99, 25, 1, 1));

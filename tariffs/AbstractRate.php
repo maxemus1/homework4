@@ -19,11 +19,8 @@ abstract class AbstractRate implements TariffInterface
 
     public function sum($distance, $time, $age, $gps = false, $driver = false)
     {
-
         if ($age >= 18 && $age <= 25) {
-
             $sum = $this->tariffPriceKilometer() * $distance + $this->tariffPriceMinute() * $time;
-
             if ($gps) {
                 $sum += $gps;
             }
@@ -39,4 +36,3 @@ abstract class AbstractRate implements TariffInterface
         throw new \InvalidArgumentException();
     }
 }
-

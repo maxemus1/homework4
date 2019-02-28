@@ -24,7 +24,6 @@ class StudentRate extends AbstractRate implements TariffInterface
             throw new \InvalidArgumentException();
         }
         $driver ? $driver = $this->driver() : $driver = false;
-
         return parent::sum($distance, $time, $age, $gps, $driver);
     }
 }

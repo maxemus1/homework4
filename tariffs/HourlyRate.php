@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Class HourlyAbstractRate
  * Тариф Почасовой

@@ -2,11 +2,10 @@
 
 class NewException extends Exception
 {
-
-    public function exception()
+    public function exception($e)
     {
         try {
-            print_r('jr');
+            print_r($e);
         } catch
         (InvalidArgumentException $e) {
             echo 'Неподходящий возвраст';

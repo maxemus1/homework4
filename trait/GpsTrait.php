@@ -6,13 +6,13 @@
  */
 trait GpsTrait
 {
+    use TimeTrait;
     protected $costGps = 15;
-   use TimeTrait;
 
     public function GpsTime($time)
     {
         $costGps = $this->costGps;
-        $time=$this->HourlyTime($time);
+        $time = $this->HourlyTime($time);
         $sum = $time * $costGps;
         return $sum;
     }
