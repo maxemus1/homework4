@@ -22,6 +22,7 @@ class DailyRate extends AbstractRate implements TariffInterface
     public function sum($distance, $time, $age, $gps = false, $driver = false)
     {
         $time = $this->DailyTime($time);
+        $gps ? $gps = $this->GpsTime($time) : $gps=false;
         $driver ? $driver = $this->driver() : $driver = false;
         return parent::sum($distance, $time, $age, $gps, $driver);
 

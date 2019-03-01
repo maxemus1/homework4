@@ -12,9 +12,8 @@ require_once 'tariffs/StudentRate.php';
 require_once 'NewException.php';
 
 $eception = new NewException();
-
-$baseRate = new BasicRate();
-//$hourlyRate = new HourlyRate();
-//$dailyRate = new DailyRate();
+//$baseRate = new BasicRate();
+//$hourlyRate = new HourlyRate();//Время указывается в минутах округляется до 60
+$dailyRate = new DailyRate();//Время указывается в часах
 //$studentRate = new StudentRate();
-$eception->exception($baseRate->sum(2, 99, 25, 1, 1));
+$eception->exception($dailyRate->sum(0, 24.30, 25));

@@ -21,7 +21,7 @@ class HourlyRate extends AbstractRate implements TariffInterface
 
     public function sum($distance, $time, $age, $gps = false, $driver = false)
     {
-        $gps ? $gps = $this->GpsTime($time) : $gps;
+        $gps ? $gps = $this->GpsTime($time) : $gps=false;
         $driver ? $driver = $this->driver() : $driver = false;
         $time = $this->HourlyTime($time);
         return parent::sum($distance, $time, $age, $gps, $driver);
