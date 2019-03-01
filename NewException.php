@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class NewException
+ */
 class NewException extends Exception
 {
     public function exception($e)

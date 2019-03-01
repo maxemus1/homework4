@@ -16,4 +16,5 @@ $eception = new NewException();
 //$hourlyRate = new HourlyRate();//Время указывается в минутах округляется до 60
 $dailyRate = new DailyRate();//Время указывается в часах
 //$studentRate = new StudentRate();
+//обязательные аргументы дистанция, время, возраст и не обязательные gps, доп водитель
 $eception->exception($dailyRate->sum(0, 24.30, 25));
